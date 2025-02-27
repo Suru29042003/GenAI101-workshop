@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crocodile Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #4CAF50; /* Crocodile green */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        button {
+            background-color: #2E7D32;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1B5E20;
+        }
+
+        .fact-display {
+            margin-top: 20px;
+            font-size: 18px;
+            transition: opacity 0.5s ease;
+            opacity: 0;
+        }
+
+        .fact-display.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Crocodile Facts</h1>
+        <button id="factButton">Show a Random Fact</button>
+        <div id="factDisplay" class="fact-display"></div>
+    </div>
+    <script>
+        const facts = [
+            "Crocodiles have been around for over 200 million years, making them one of the oldest living species.",
+            "They can hold their breath underwater for up to an hour.",
+            "Crocodiles have a powerful bite, with a force of up to 3,700 pounds per square inch.",
+            "They can grow up to 23 feet long and weigh over 2,200 pounds.",
+            "Crocodiles have a special valve in their throat that allows them to open their mouths underwater without drowning.",
+            "They can live up to 70 years in the wild.",
+            "Crocodiles are excellent swimmers and can reach speeds of up to 20 miles per hour in the water.",
+            "They have a unique way of cooling down by opening their mouths, which is known as 'mouth gaping'.",
+            "Crocodiles have a highly developed sense of smell, which helps them locate prey.",
+            "They are known to swallow stones, which help them digest food and maintain buoyancy in water."
+        ];
+
+        document.getElementById('factButton').addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const factDisplay = document.getElementById('factDisplay');
+            factDisplay.textContent = facts[randomIndex];
+            factDisplay.classList.add('show');
+        });
+    </script>
+</body>
+</html>
